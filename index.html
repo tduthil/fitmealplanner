@@ -1,70 +1,104 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
 
     <title>fitlife foods Meal Planner - Plan Your Meals by the Macros</title>
-  </head>
-  <body>
-    <div class="jumbotron">
-    <h1 class="display-2 text-uppercase text-center">Plan Your fitelife delivery meals</h1>
-    </div>
+</head>
 
+<body>
+    <!-- The Page Header -->
+    <header class="jumbotron">
+            <h1 class="display-2 text-uppercase text-center">Plan Your fitelife delivery meals</h1>
+    </header>
+    <!-- Meal Plan Options -->
     <div class="d-grid gap-6">
-        <button type="button" class="btn btn-primary btn-outline btn-lg mx-4">Plan by Calories</button> <button type="button"
-            class="btn btn-primary btn-lg">Plan by Macros</button>
+        <button type="button" onclick="planByCalories()" class="btn btn-primary btn-outline btn-lg mx-4">Plan by Calories</button> 
+        <button type="button" onclick="planByMacros()" class="btn btn-primary btn-lg">Plan by Macros</button>
     </div>
     <br>
-    <table class="table">
-        <thead class="table-primary">
-            <tr>
-                <th></th>
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Lunch</th>
-                <td>meal1</td>
-                <td>meal3</td>
-                <td>meal5</td>
-                <td>meal7</td>
-                <td>meal9</td>
-                <td>meal11</td>
-                <td>meal13</td>
-            </tr>
-            <tr>
-                <th scope="row">Dinner</th>
-                <td>meal2</td>
-                <td>meal4</td>
-                <td>meal6</td>
-                <td>meal8</td>
-                <td>meal10</td>
-                <td>meal12</td>
-                <td>meal14</td>
-            </tr>
 
-            </tr>
-        </tbody>
+    <form> 
+        <div class="form-group">
+          <label for="totalCalories">Enter Total Calories for the Day</label>
+          <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories">
+          <small id="planDescription" class="form-text text-muted">60% of your total will come from your Meal Plan.</small>
+        </div>
         
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    
+    
 
-    </table>
+    <!-- The Final Meal Plan Calendar-->
+    <div class="mealPlan" id="mealPlan1">
+        <table class="table">
+            <thead class="table-primary">
+                <tr>
+                    <th></th>
+                    <!-- <th>Sunday</th> -->
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <!--                 <th>Saturday</th>
+         -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Lunch</th>
+                    <td>meal1</td>
+                    <td>meal3</td>
+                    <td>meal5</td>
+                    <td>meal7</td>
+                    <td>meal9</td>
+                    <!--         <td>meal11</td>
+                        <td>meal13</td> -->
+                </tr>
+                <tr>
+                    <th scope="row">Dinner</th>
+                    <td>meal2</td>
+                    <td>meal4</td>
+                    <td>meal6</td>
+                    <td>meal8</td>
+                    <td>meal10</td>
+                    <!--   <td>meal12</td>
+                        <td>meal14</td> -->
+                </tr>
+    
+                </tr>
+            </tbody>
+    
+    
+        </table>
+    </div>
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    
-  </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script src="js/index.js"></script>
+
+
+</body>
+
 </html>
