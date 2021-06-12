@@ -11,6 +11,8 @@ function planByCalories() {
 
 }
 
+
+
 function calcTotalCalories() {
     //Meal Plan will use 60% of total calories entered by user (2 meals per day)
     /* var userEntry = document.getElementById("totalCalories");
@@ -20,11 +22,32 @@ function calcTotalCalories() {
 
     var maxCal = document.getElementById("totalCalories").value *.60;
 
-    //document.getElementById("plan").innerHTML = `${maxCal}`;
+    //write code to create meals
+    var meal1 = {name:"BBQ Beef with Mac 'N Cheese", calories: 600, protein: 51, fat: 22, carbs: 54};
+    var meal2 = {name:"Pulled Pork Carnitas", calories: 480, protein: 50, fat: 20, carbs: 27};
+    var meal3 = {name:"Pizza", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal4 = {name:"BBQ Beef", calories: 400, protein: 51, fat: 22, carbs: 54};
+    var meal5 = {name:"Mac 'N Cheese", calories: 300, protein: 51, fat: 22, carbs: 54};
+    var meal6 = {name:"Bologna Sandwich", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal7 = {name:"Grilled Cheese", calories: 600, protein: 51, fat: 22, carbs: 54};
+    var meal8 = {name:"BBQ Bacon Doublecheeseburger", calories: 300, protein: 51, fat: 22, carbs: 54};
+    var meal9 = {name:"Spaghetti Meatballs", calories: 700, protein: 51, fat: 22, carbs: 54};
+    var meal10 = {name:"Chicken N Rice", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal11 = {name:"Shredded Beef and Potatoes", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal12 = {name:"Egg Rolls and Rice", calories: 550, protein: 51, fat: 22, carbs: 54};
+    var meal13 = {name:"Tuna Tartar", calories: 400, protein: 51, fat: 22, carbs: 54};
+    var meal14 = {name:"Refried Beans and Broccoli", calories: 470, protein: 51, fat: 22, carbs: 54};
+    var meal15 = {name:"Tuna Salad", calories: 350, protein: 51, fat: 22, carbs: 54};
+    
+    /* var meals = [meal1, meal2, meal3, meal4, meal5, meal6, meal7, meal8, meal9, meal10, meal11, meal12, meal13, meal14, meal15];
 
+    var randomMeal = meals[Math.floor(Math.random()*meals.length)]
 
-   document.getElementById("mealPlan1").innerHTML = `<p>Max Calories For Lunch & Dinner: ${maxCal}</p><br><table class="table">
-                <thead class="table-primary">
+    document.getElementById("meals").innerHTML = randomMeal.name;
+ */
+
+   document.getElementById("mealPlan1").innerHTML = `<p>Max Calories For Lunch & Dinner:  ${maxCal}</p><br><table class="table">
+                <thead class="table-warning">
                     <tr>
                         <th></th>
                         <!-- <th>Sunday</th> -->
@@ -40,21 +63,21 @@ function calcTotalCalories() {
                 <tbody>
                     <tr>
                         <th scope="row">Lunch</th>
-                        <td>meal1</td>
-                        <td>meal3</td>
-                        <td>meal5</td>
-                        <td>meal7</td>
-                        <td>meal9</td>
+                        <td>${meal1.name}</td>
+                        <td>${meal3.name}</td>
+                        <td>${meal5.name}</td>
+                        <td>${meal7.name}</td>
+                        <td>${meal9.name}</td>
                         <!--         <td>meal11</td>
                             <td>meal13</td> -->
                     </tr>
                     <tr>
                         <th scope="row">Dinner</th>
-                        <td>meal2</td>
-                        <td>meal4</td>
-                        <td>meal6</td>
-                        <td>meal8</td>
-                        <td>meal10</td>
+                        <td>${meal2.name}</td>
+                        <td>${meal4.name}</td>
+                        <td>${meal6.name}</td>
+                        <td>${meal8.name}</td>
+                        <td>${meal10.name}</td>
                         <!--   <td>meal12</td>
                             <td>meal14</td> -->
                     </tr>

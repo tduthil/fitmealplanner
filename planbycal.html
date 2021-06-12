@@ -19,32 +19,40 @@
             <h1 class="display-4 text-uppercase text-center">Plan Your fitelife delivery meals</h1>
         </div>
     </div>
-    <!-- Calculates total calories based on user input -->
-    <form> 
-        <div class="form-group">
-          <label for="totalCalories">Enter Total Calories for the Day</label>
-          <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories" placeholder="ex. 2000" required>
-          <small id="planDescription" class="form-text text-muted">60% of your total will be used for Lunch & Dinner.</small>
-        </div>
-        
-        <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()";>Submit</button>
-    </form>
-    <br>
-    
-    <div id="plan">
-
-        <!-- <p>Make this red</p> -->
-        <div class="table-responsive">
-            <div class="mealPlan" id="mealPlan1">
-
-
-
+    <div class="container">
+        <!-- Calculates total calories based on user input -->
+        <form>
+            <div class="form-group">
+                <label for="totalCalories">Enter Total Calories for the Day</label>
+                <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories"
+                    placeholder="ex. 2000" required>
+                <small id="planDescription" class="form-text text-muted">60% of your total will be used for Lunch &
+                    Dinner.</small>
             </div>
+    
+            <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()" ;>Submit</button>
+        </form>
+        <br>
+    
+        <p id="meals"></p>
+    
+        <div id="plan">
+    
+            <!-- <p>Make this red</p> -->
+            <div class="table-responsive">
+                <div class="mealPlan" id="mealPlan1">
+    
+    
+    
+                </div>
+            </div>
+    
+    
         </div>
-        
-
+    
+        <br>
     </div>
-        
+    
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
