@@ -15,69 +15,33 @@
 <body>
     <!-- The Page Header -->
     <div class="jumbotron jumbotron-fluid">
-        <header class="container">
+        <div class="container">
             <h1 class="display-4 text-uppercase text-center">Plan Your fitelife delivery meals</h1>
-        </header>
+        </div>
     </div>
     <!-- Calculates total calories based on user input -->
     <form> 
         <div class="form-group">
           <label for="totalCalories">Enter Total Calories for the Day</label>
-          <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories" placeholder="ex. 2000">
+          <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories" placeholder="ex. 2000" required>
           <small id="planDescription" class="form-text text-muted">60% of your total will be used for Lunch & Dinner.</small>
         </div>
         
-        <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories();">Submit</button>
+        <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()";>Submit</button>
     </form>
     <br>
     
     <div id="plan">
-        
-        <!-- The Final Meal Plan Calendar-->
-        <div class="mealPlan" id="mealPlan1">
-            <table class="table">
-                <thead class="table-primary">
-                    <tr>
-                        <th></th>
-                        <!-- <th>Sunday</th> -->
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <!--                 <th>Saturday</th>
-             -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Lunch</th>
-                        <td>meal1</td>
-                        <td>meal3</td>
-                        <td>meal5</td>
-                        <td>meal7</td>
-                        <td>meal9</td>
-                        <!--         <td>meal11</td>
-                            <td>meal13</td> -->
-                    </tr>
-                    <tr>
-                        <th scope="row">Dinner</th>
-                        <td>meal2</td>
-                        <td>meal4</td>
-                        <td>meal6</td>
-                        <td>meal8</td>
-                        <td>meal10</td>
-                        <!--   <td>meal12</td>
-                            <td>meal14</td> -->
-                    </tr>
-        
-                    </tr>
-                </tbody>
-        
-        
-            </table>
+
+        <!-- <p>Make this red</p> -->
+        <div class="table-responsive">
+            <div class="mealPlan" id="mealPlan1">
+
+
+
+            </div>
         </div>
-    }
+        
 
     </div>
         
