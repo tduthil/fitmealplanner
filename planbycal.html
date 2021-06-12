@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css">
+    
+        <title>fitlife foods Meal Planner - Plan by Calories</title>
+    </head>
+<body>
+    <!-- The Page Header -->
+    <div class="jumbotron jumbotron-fluid">
+        <header class="container">
+            <h1 class="display-4 text-uppercase text-center">Plan Your fitelife delivery meals</h1>
+        </header>
+    </div>
+    
+    <form> 
+        <div class="form-group">
+          <label for="totalCalories">Enter Total Calories for the Day</label>
+          <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories">
+          <small id="planDescription" class="form-text text-muted">60% of your total will come from your Meal Plan.</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    
+    
+
+    <!-- The Final Meal Plan Calendar-->
+    <div class="mealPlan" id="mealPlan1">
+        <table class="table">
+            <thead class="table-primary">
+                <tr>
+                    <th></th>
+                    <!-- <th>Sunday</th> -->
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <!--                 <th>Saturday</th>
+         -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Lunch</th>
+                    <td>meal1</td>
+                    <td>meal3</td>
+                    <td>meal5</td>
+                    <td>meal7</td>
+                    <td>meal9</td>
+                    <!--         <td>meal11</td>
+                        <td>meal13</td> -->
+                </tr>
+                <tr>
+                    <th scope="row">Dinner</th>
+                    <td>meal2</td>
+                    <td>meal4</td>
+                    <td>meal6</td>
+                    <td>meal8</td>
+                    <td>meal10</td>
+                    <!--   <td>meal12</td>
+                        <td>meal14</td> -->
+                </tr>
+    
+                </tr>
+            </tbody>
+    
+    
+        </table>
+    </div>
+</body>
+</html>

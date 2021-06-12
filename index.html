@@ -11,78 +11,32 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
 
-    <title>fitlife foods Meal Planner - Plan Your Meals by the Macros</title>
+    <title>fitlife foods Meal Planner - Plan Your Weekly Meals</title>
 </head>
 
 <body>
     <!-- The Page Header -->
-    <header class="jumbotron">
-            <h1 class="display-2 text-uppercase text-center">Plan Your fitelife delivery meals</h1>
-    </header>
-    <!-- Meal Plan Options -->
-    <div class="d-grid gap-6">
-        <button type="button" onclick="planByCalories()" class="btn btn-primary btn-outline btn-lg mx-4">Plan by Calories</button> 
-        <button type="button" onclick="planByMacros()" class="btn btn-primary btn-lg">Plan by Macros</button>
+    <div class="jumbotron jumbotron-fluid">
+        <header class="container">
+            <h1 class="display-4 text-uppercase text-center">Plan Your fitelife delivery meals</h1>
+        </header>
     </div>
-    <br>
-
-    <form> 
-        <div class="form-group">
-          <label for="totalCalories">Enter Total Calories for the Day</label>
-          <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories">
-          <small id="planDescription" class="form-text text-muted">60% of your total will come from your Meal Plan.</small>
+    
+    <!-- Meal Plan Options -->
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-4">
+                <a class="btn btn-primary btn-lg" href="planbycal.html" role="button">Plan by Calories</a>
+            </div>
+            <div class="col-4">
+                <a class="btn btn-primary btn-lg" href="planbymac.html" role="button">Plan by Macros</a>
+            </div>    
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <br>
-    
-    
-
-    <!-- The Final Meal Plan Calendar-->
-    <div class="mealPlan" id="mealPlan1">
-        <table class="table">
-            <thead class="table-primary">
-                <tr>
-                    <th></th>
-                    <!-- <th>Sunday</th> -->
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <!--                 <th>Saturday</th>
-         -->
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Lunch</th>
-                    <td>meal1</td>
-                    <td>meal3</td>
-                    <td>meal5</td>
-                    <td>meal7</td>
-                    <td>meal9</td>
-                    <!--         <td>meal11</td>
-                        <td>meal13</td> -->
-                </tr>
-                <tr>
-                    <th scope="row">Dinner</th>
-                    <td>meal2</td>
-                    <td>meal4</td>
-                    <td>meal6</td>
-                    <td>meal8</td>
-                    <td>meal10</td>
-                    <!--   <td>meal12</td>
-                        <td>meal14</td> -->
-                </tr>
-    
-                </tr>
-            </tbody>
-    
-    
-        </table>
     </div>
+    <br>
+
+    
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -2,3 +2,12 @@
     display: none;
 
 }
+
+.jumbotron{
+   background-color: #83c54a; 
+}
+
+.btn{
+    background-color: #ffc600;
+    color:black;
+}
