@@ -19,6 +19,7 @@ function calcTotalCalories() {
     document.write(userEntry); */
 
     //document.getElementById("plan").innerText = "Max Calories For Lunch & Dinner: ";
+    //window.location.href='planbycal.html';
 
     var maxCal = document.getElementById("totalCalories").value *.60;
 
