@@ -33,14 +33,33 @@
                 </button>
             </div>
             <div class="col">
-                <a class="btn btn-primary btn-lg btn-block" href="planbymac.html" role="button">Plan by Macros</a>
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#macroModal">
+                    Plan by Macros
+                </button>
             </div>    
         </div>
         
-    </div>
-    <br>
+        <br>
 
-    <!--Modal-->
+        <p id="meals"></p>
+    
+        <div id="plan">
+
+        <!--Meal Plan Table Goes Here -->
+        <div class="table-responsive">
+            <div class="mealPlan" id="mealPlan1">
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    
+
+    <!--Calorie Modal-->
     <div class="modal fade" id="calorieModal" tabindex="-1" role="dialog" aria-labelledby="calorieModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -65,12 +84,52 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <!-- <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()">Submit</button> -->
-                    <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()">Submit</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="return calcTotalCalories()">Submit</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!--Macro Modal-->
+    <div class="modal fade" id="macroModal" tabindex="-1" role="dialog" aria-labelledby="macroModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter Macros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="protein">Enter protein for the day:</label>
+                            <input type="text" class="form-control" id="protein" aria-describedby="protein" placeholder="ex. 200"
+                                required>
+                            <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
+                                Dinner.</small>
+                            <label for="carbs">Enter carbs for the day:</label>
+                            <input type="text" class="form-control" id="carbs" aria-describedby="carbs" placeholder="ex. 150"
+                                required>
+                            <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
+                                Dinner.</small>
+                            <label for="fats">Enter fats for the day:</label>
+                            <input type="text" class="form-control" id="fats" aria-describedby="fats" placeholder="ex. 50"
+                                required>
+                            <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
+                                Dinner.</small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()">Submit</button> -->
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="return planByMacros()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->

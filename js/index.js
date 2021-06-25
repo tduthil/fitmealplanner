@@ -95,63 +95,70 @@ function calcTotalCalories() {
 }
 
 function planByMacros() {
-    //Generate Play By Macros - a different way to do above
-    calPlan = document.getElementById("mealPlan1");
+    var maxMacros = .60 * ((document.getElementById("protein").value * 4) + (document.getElementById("carbs").value * 4) + (document.getElementById("fats").value * 9));
 
-    if (calPlan.style.display == "none") {
+    //write code to create meals
+    var meal1 = {name:"BBQ Beef with Mac 'N Cheese", calories: 600, protein: 51, fat: 22, carbs: 54};
+    var meal2 = {name:"Pulled Pork Carnitas", calories: 480, protein: 50, fat: 20, carbs: 27};
+    var meal3 = {name:"Pizza", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal4 = {name:"BBQ Beef", calories: 400, protein: 51, fat: 22, carbs: 54};
+    var meal5 = {name:"Mac 'N Cheese", calories: 300, protein: 51, fat: 22, carbs: 54};
+    var meal6 = {name:"Bologna Sandwich", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal7 = {name:"Grilled Cheese", calories: 600, protein: 51, fat: 22, carbs: 54};
+    var meal8 = {name:"BBQ Bacon Doublecheeseburger", calories: 300, protein: 51, fat: 22, carbs: 54};
+    var meal9 = {name:"Spaghetti Meatballs", calories: 700, protein: 51, fat: 22, carbs: 54};
+    var meal10 = {name:"Chicken N Rice", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal11 = {name:"Shredded Beef and Potatoes", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal12 = {name:"Egg Rolls and Rice", calories: 550, protein: 51, fat: 22, carbs: 54};
+    var meal13 = {name:"Tuna Tartar", calories: 400, protein: 51, fat: 22, carbs: 54};
+    var meal14 = {name:"Refried Beans and Broccoli", calories: 470, protein: 51, fat: 22, carbs: 54};
+    var meal15 = {name:"Tuna Salad", calories: 350, protein: 51, fat: 22, carbs: 54};
+    
+    //create table
 
-        calPlan.style.display = "block";
-    } else {
-        calPlan.style.display = "none";
-    }
+   document.getElementById("mealPlan1").innerHTML = `<p>Max Calories For Lunch & Dinner:  ${maxMacros}</p><br><table class="table">
+                <thead class="table-warning">
+                    <tr>
+                        <th></th>
+                        <!-- <th>Sunday</th> -->
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <!--                 <th>Saturday</th>
+            -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Lunch</th>
+                        <td>${meal1.name}</td>
+                        <td>${meal3.name}</td>
+                        <td>${meal5.name}</td>
+                        <td>${meal7.name}</td>
+                        <td>${meal9.name}</td>
+                        <!--         <td>meal11</td>
+                            <td>meal13</td> -->
+                    </tr>
+                    <tr>
+                        <th scope="row">Dinner</th>
+                        <td>${meal2.name}</td>
+                        <td>${meal4.name}</td>
+                        <td>${meal6.name}</td>
+                        <td>${meal8.name}</td>
+                        <td>${meal10.name}</td>
+                        <!--   <td>meal12</td>
+                            <td>meal14</td> -->
+                    </tr>
+        
+                    </tr>
+                </tbody>
+        
+        
+            </table>
+        </div>`; 
+
+    return false; 
 
 }
-/* 
-function generatePlan() {
-    //Generate Meal Plan
-    <!-- The Final Meal Plan Calendar-->
-    <div class="mealPlan" id="mealPlan1">
-        <table class="table">
-            <thead class="table-primary">
-                <tr>
-                    <th></th>
-                    <!-- <th>Sunday</th> -->
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <!--                 <th>Saturday</th>
-         -->
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Lunch</th>
-                    <td>meal1</td>
-                    <td>meal3</td>
-                    <td>meal5</td>
-                    <td>meal7</td>
-                    <td>meal9</td>
-                    <!--         <td>meal11</td>
-                        <td>meal13</td> -->
-                </tr>
-                <tr>
-                    <th scope="row">Dinner</th>
-                    <td>meal2</td>
-                    <td>meal4</td>
-                    <td>meal6</td>
-                    <td>meal8</td>
-                    <td>meal10</td>
-                    <!--   <td>meal12</td>
-                        <td>meal14</td> -->
-                </tr>
-    
-                </tr>
-            </tbody>
-    
-    
-        </table>
-    </div>
-} */
-
