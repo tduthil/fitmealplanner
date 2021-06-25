@@ -1,13 +1,11 @@
-function planByCalories() {
+function tableToggler() {
     //Generate Plan by Calories
     document.getElementById("mealPlan1").style.display = "block";
 
-   /*  if (calPlan.style.display == "none") {
+    if (calPlan.style.display == "block") {
 
-        calPlan.style.display = "block";
-    } else {
         calPlan.style.display = "none";
-    } */
+    } 
 
 }
 
@@ -15,11 +13,7 @@ function planByCalories() {
 
 function calcTotalCalories() {
     //Meal Plan will use 60% of total calories entered by user (2 meals per day)
-    /* var userEntry = document.getElementById("totalCalories");
-    document.write(userEntry); */
-
-    //document.getElementById("plan").innerText = "Max Calories For Lunch & Dinner: ";
-    //window.location.href='planbycal.html';
+    
 
     var maxCal = document.getElementById("totalCalories").value *.60;
 
@@ -95,6 +89,8 @@ function calcTotalCalories() {
 }
 
 function planByMacros() {
+    //Meal Plan will use 60% of total calories entered by user (2 meals per day)
+
     var maxMacros = .60 * ((document.getElementById("protein").value * 4) + (document.getElementById("carbs").value * 4) + (document.getElementById("fats").value * 9));
 
     //write code to create meals

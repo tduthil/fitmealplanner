@@ -16,15 +16,38 @@
 
 <body>
     <!-- The Page Header -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4 text-uppercase text-center">Plan Your fitelife delivery meals</h1>
-        </div>
-    </div>
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Meal Planner</a>
+        <div class="align-items-center">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Plan by Calories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Plan by Macros</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+    
     
     <!-- Meal Plan Options -->
     <div class="container">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center mt-4">
+            <div class="col-12 text-center mb-2">
+                <h1>Plan Your Weekly Meals</h1>
+                <p>Choose to create a meal plan by entering your calories or enter your macros and we will calculate the calories for you.</p>
+            </div>
             <div class="col">
                 <!-- <a class="btn btn-primary btn-lg btn-block" href="planbycal.html" role="button">Plan by Calories</a> -->
                 <!-- Button trigger modal -->
@@ -46,7 +69,7 @@
         <div id="plan">
 
         <!--Meal Plan Table Goes Here -->
-        <div class="table-responsive">
+        <div class="table-responsive table-bordered table-hover">
             <div class="mealPlan" id="mealPlan1">
 
 
