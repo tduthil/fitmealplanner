@@ -27,7 +27,7 @@ function calcTotalCalories() {
     var meal7 = {name:"Grilled Cheese", calories: 600, protein: 51, fat: 22, carbs: 54};
     var meal8 = {name:"BBQ Bacon Doublecheeseburger", calories: 300, protein: 51, fat: 22, carbs: 54};
     var meal9 = {name:"Spaghetti Meatballs", calories: 700, protein: 51, fat: 22, carbs: 54};
-    var meal10 = {name:"Chicken N Rice", calories: 500, protein: 51, fat: 22, carbs: 54};
+    var meal11 = {name:"Chicken N Rice", calories: 500, protein: 51, fat: 22, carbs: 54};
     var meal11 = {name:"Shredded Beef and Potatoes", calories: 500, protein: 51, fat: 22, carbs: 54};
     var meal12 = {name:"Egg Rolls and Rice", calories: 550, protein: 51, fat: 22, carbs: 54};
     var meal13 = {name:"Tuna Tartar", calories: 400, protein: 51, fat: 22, carbs: 54};
