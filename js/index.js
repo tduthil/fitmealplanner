@@ -1,26 +1,5 @@
 
-//write code to create meals
-/* const meal1 = {name:"BBQ Beef with Mac 'N Cheese", calories: 600, protein: 51, fat: 22, carbs: 54};
-const meal2 = {name:"Pulled Pork Carnitas", calories: 480, protein: 50, fat: 20, carbs: 27};
-const meal3 = {name:"Pizza", calories: 500, protein: 51, fat: 22, carbs: 54};
-const meal4 = {name:"BBQ Beef", calories: 400, protein: 51, fat: 22, carbs: 54};
-const meal5 = {name:"Mac 'N Cheese", calories: 300, protein: 51, fat: 22, carbs: 54};
-const meal6 = {name:"Bologna Sandwich", calories: 500, protein: 51, fat: 22, carbs: 54};
-const meal7 = {name:"Grilled Cheese", calories: 600, protein: 51, fat: 22, carbs: 54};
-const meal8 = {name:"BBQ Bacon Doublecheeseburger", calories: 300, protein: 51, fat: 22, carbs: 54};
-const meal9 = {name:"Spaghetti Meatballs", calories: 700, protein: 51, fat: 22, carbs: 54};
-const meal10 = {name:"Chicken N Rice", calories: 500, protein: 51, fat: 22, carbs: 54};
-const meal11 = {name:"Shredded Beef and Potatoes", calories: 500, protein: 51, fat: 22, carbs: 54};
-const meal12 = {name:"Egg Rolls and Rice", calories: 550, protein: 51, fat: 22, carbs: 54};
-const meal13 = {name:"Tuna Tartar", calories: 400, protein: 51, fat: 22, carbs: 54};
-const meal14 = {name:"Refried Beans and Broccoli", calories: 470, protein: 51, fat: 22, carbs: 54};
-const meal15 = {name:"Tuna Salad", calories: 350, protein: 51, fat: 22, carbs: 54}; */
-
-/*     var meals = [meal1, meal2, meal3, meal4, meal5, meal6, meal7, meal8, meal9, meal10, meal11, meal12, meal13, meal14, meal15];
-
-var randomMeal;
-randomMeal = meals[Math.floor(Math.random()*meals.length)]; */
-
+//create array of meal
 const meals = [{name:"BBQ Beef with Mac 'N Cheese", calories: 600, protein: 51, fat: 22, carbs: 54},
 		{name:"Pulled Pork Carnitas", calories: 480, protein: 50, fat: 20, carbs: 27},
 		{name:"Pizza", calories: 500, protein: 51, fat: 22, carbs: 54},
@@ -38,26 +17,27 @@ const meals = [{name:"BBQ Beef with Mac 'N Cheese", calories: 600, protein: 51, 
 		{name:"Tuna Salad", calories: 350, protein: 51, fat: 22, carbs: 54},]
 
 function getRandomMeal() {
-    //const meals = [meal1, meal2, meal3, meal4, meal5, meal6, meal7, meal8, meal9, meal10, meal11, meal12, meal13, meal14, meal15];
-
+    //random meal selector
     return meals[Math.floor(Math.random()*meals.length)];
 }
 
 function generatePlan() {
     //choose 2 random meals per days of the week
     const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+    const mealTime = ["lunch", "dinner"]
     let weeklyPlan = [];
     //meal = "";
    
     for(day in daysOfWeek){
         meal = getRandomMeal();
-        if(!weeklyPlan.includes(meal)) {
-            weeklyPlan.push(meal);
+        for(time in mealTime){
+            if(!weeklyPlan.includes(meal)) {
+                weeklyPlan.push(meal);
+            }
+            else {
+                break;
+            }
         }
-        else {
-            break;
-        }
-        
     }
 
     console.log(weeklyPlan);
