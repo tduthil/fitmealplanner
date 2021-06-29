@@ -79,7 +79,7 @@ function generateTable(maxCal) {
     <tbody class="table-info">
         <tr>
             <th scope="row">Lunch</th>
-            <td><a class="nav-link itemOne" href="#">${weeklyPlan[0].name}</a></td>
+            <td><a class="nav-link" data-toggle="modal" data-target="#mealModal">${weeklyPlan[0].name}</a></td>
             <td>${weeklyPlan[1].name}</td>
             <td>${weeklyPlan[2].name}</td>
             <td>${weeklyPlan[3].name}</td>
@@ -115,6 +115,9 @@ function planByCalories() {
     //generate table using weeklyPlan
     generateTable(getMaxCal());
 
+    //build modal based on weeklyPlan
+    buildModal(weeklyPlan);
+
     return false; 
 
 }
@@ -128,6 +131,31 @@ function planByMacros() {
     //generate table using max Calories from Macros
     generateTable(getMaxCalbyMacros());
 
+    
+
     return false;
 
+}
+
+function buildModal(weeklyPlan) {
+    weeklyPlan = weeklyPlan;
+
+    return document.getElementById("mealModalBody").innerHTML = `<div class="modal fade" id="mealModal" tabindex="-1" role="dialog" aria-labelledby="calorieModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">${weeklyPlan[0].name}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">  
+                <img class="card-img-top item" src="img/BBQ_Thin_2.png" alt="Card image cap">
+                <div class="modal-content">
+                    <p>Cal:${weeklyPlan[0].calories} Protein: ${weeklyPlan[0].protein} Carbs: ${weeklyPlan[0].carbs} Fats: ${weeklyPlan[0].fat}</p>
+                </div> 
+            </div>
+        </div>
+    </div>` ;
 }
