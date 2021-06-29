@@ -1,3 +1,18 @@
+body, html {
+   
+  
+   /* The image used */
+   background-image: url("img/pexels-lukas-349609.jpg");
+ 
+   /* Full height */
+   height: 100%;
+ 
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
 #mealPlan1{
    display: block;
 
@@ -12,3 +27,12 @@
     background-color: #ffc600;
     color:black;
 }
+
+img {
+   size: 1em;
+}
+
+
+.item1, .item2 {
+   display: none;
+ }

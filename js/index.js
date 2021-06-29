@@ -1,3 +1,8 @@
+  // popovers initialization - on hover
+$('.itemOne').hover(function() {
+	$('.item1').toggle();
+});
+
 function getRandomMeal() {
     //random meal selector
     return meals[Math.floor(Math.random()*meals.length)];
@@ -48,17 +53,17 @@ function getMaxCal() {
 function getMaxCalbyMacros() {
     //calculate max calories based on user provided macros
     var maxCal;
-    
-    maxCal= .60 * ((document.getElementById("protein").value * 4) + (document.getElementById("carbs").value * 4) + (document.getElementById("fats").value * 9));
-   
+
+    maxCal = .60 * ((document.getElementById("protein").value * 4) + (document.getElementById("carbs").value * 4) + (document.getElementById("fats").value * 9));
+
     return maxCal;
 }
 
 function generateTable(maxCal) {
     //Create table using the max calories inputed by the user
 
-    return document.getElementById("mealPlan1").innerHTML = `<p>Max Calories For Lunch & Dinner:  ${maxCal}</p><br><table class="table">
-    <thead class="table-warning">
+    return document.getElementById("mealPlan1").innerHTML = `<p><strong>Max Calories For Lunch & Dinner:  ${maxCal}</strong></p><br><table class="table">
+    <thead class="table-dark">
         <tr>
             <th></th>
             <!-- <th>Sunday</th> -->
@@ -71,10 +76,10 @@ function generateTable(maxCal) {
 -->
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-info">
         <tr>
             <th scope="row">Lunch</th>
-            <td>${weeklyPlan[0].name}</td>
+            <td><a class="nav-link itemOne" href="#">${weeklyPlan[0].name}</a></td>
             <td>${weeklyPlan[1].name}</td>
             <td>${weeklyPlan[2].name}</td>
             <td>${weeklyPlan[3].name}</td>
@@ -104,10 +109,10 @@ function generateTable(maxCal) {
 function planByCalories() {
     //Meal Plan will use 60% of total calories entered by user (2 meals per day)
     
-    //generate weekly plan
+    //generate weekly plan array
     weeklyPlan = generatePlan();
 
-    //generate table
+    //generate table using weeklyPlan
     generateTable(getMaxCal());
 
     return false; 
@@ -117,7 +122,7 @@ function planByCalories() {
 function planByMacros() {
     //Meal Plan will use 60% of total calories entered by user (2 meals per day)
 
-    //generate weekly plan
+    //generate weekly plan array
     weeklyPlan = generatePlan();
 
     //generate table using max Calories from Macros
