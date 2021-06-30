@@ -62,7 +62,7 @@ function getMaxCalbyMacros() {
 function generateTable(maxCal) {
     //Create table using the max calories inputed by the user
 
-    return document.getElementById("mealPlan1").innerHTML = `<p><strong>Max Calories For Lunch & Dinner:  ${maxCal}</strong></p><br><table class="table">
+    return document.getElementById("mealPlan1").innerHTML = `<p><strong>Max Calories For Lunch & Dinner:  ${maxCal}</strong></p><br><table class="table plan">
     <thead class="table-dark">
         <tr>
             <th></th>
@@ -79,21 +79,21 @@ function generateTable(maxCal) {
     <tbody class="table-info">
         <tr>
             <th scope="row">Lunch</th>
-            <td><a class="nav-link" data-toggle="modal" data-target="#mealModal">${weeklyPlan[0].name}</a></td>
-            <td>${weeklyPlan[1].name}</td>
-            <td>${weeklyPlan[2].name}</td>
-            <td>${weeklyPlan[3].name}</td>
-            <td>${weeklyPlan[4].name}</td>
+            <td><a onClick="getId()" href="#" id="0" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[0].name}</a></td>
+            <td><a onClick="getId()" href="#" id="1" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[1].name}</a></td>
+            <td><a onClick="getId()" href="#" id="2" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[2].name}</a></td>
+            <td><a onClick="getId()" href="#" id="3" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[3].name}</a></td>
+            <td><a onClick="getId()" href="#" id="4" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[4].name}</a></td>
             <!--         <td>meal11</td>
                 <td>meal13</td> -->
         </tr>
         <tr>
             <th scope="row">Dinner</th>
-            <td>${weeklyPlan[5].name}</td>
-            <td>${weeklyPlan[6].name}</td>
-            <td>${weeklyPlan[7].name}</td>
-            <td>${weeklyPlan[8].name}</td>
-            <td>${weeklyPlan[9].name}</td>
+            <td><a onClick="getId()" href="#" id="5" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[5].name}</a></td>
+            <td><a onClick="getId()" href="#" id="6" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[6].name}</a></td>
+            <td><a onClick="getId()" href="#" id="7" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[7].name}</a></td>
+            <td><a onClick="getId()" href="#" id="8" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[8].name}</a></td>
+            <td><a onClick="getId()" href="#" id="9" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[9].name}</a></td>
             <!--   <td>meal12</td>
                 <td>meal14</td> -->
         </tr>
@@ -139,13 +139,16 @@ function planByMacros() {
 
 function buildModal(weeklyPlan) {
     weeklyPlan = weeklyPlan;
-
+    
+    i = 0;
+    
+    
     return document.getElementById("mealModalBody").innerHTML = `<div class="modal fade" id="mealModal" tabindex="-1" role="dialog" aria-labelledby="calorieModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">${weeklyPlan[0].name}</h5>
+                <h5 class="modal-title">${weeklyPlan[i].name}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -159,3 +162,22 @@ function buildModal(weeklyPlan) {
         </div>
     </div>` ;
 }
+
+
+//<a href="#" id="pager_1" class="pagerlink" >link</a>
+
+function getId() {
+
+    id = this.event.target.id;
+
+    if(id == '0'){
+        id = 0;
+    } else {
+        id = "HELP!";
+    }
+    console.log(id);
+    console.log(typeof(id));
+    return id;
+   
+}
+   
