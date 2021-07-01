@@ -106,7 +106,7 @@ function buildModal(index) {
                 </button>
             </div>
             <div class="modal-body">  
-                <img class="card-img-top item" src="img/BBQ_Thin_2.png" alt="Card image cap">
+                <img class="card-img-top item" src="img/${plan[i].src}" alt="Card image cap">
                 <div class="modal-content">
                     <p>Cal:${plan[i].calories} Protein: ${plan[i].protein} Carbs: ${plan[i].carbs} Fats: ${plan[i].fat}</p>
                 </div> 
