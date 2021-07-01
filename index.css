@@ -36,3 +36,7 @@ img {
 .item1, .item2 {
    display: none;
  }
+
+ a {
+    color: black;
+ }

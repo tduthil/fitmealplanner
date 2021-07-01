@@ -1,17 +1,10 @@
-  // popovers initialization - on hover
-$('.itemOne').hover(function() {
-	$('.item1').toggle();
-});
-
 function getRandomMeal() {
     //random meal selector
     return meals[Math.floor(Math.random()*meals.length)];
 }
 
 function generatePlan() {
-    //choose 2 random meals per days of the week
-    //const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-    //const mealTime = ["lunch", "dinner"]
+    //generate a plan based on number of meals needed
     let weeklyPlan = [];
  
     for (; weeklyPlan.length < 10;) {
@@ -24,22 +17,8 @@ function generatePlan() {
             continue;
         }
     }
-
     return weeklyPlan;
-
 }
-
-
-/* function tableToggler() {
-    //Generate Plan by Calories
-    document.getElementById("mealPlan1").style.display = "block";
-
-    if (calPlan.style.display == "block") {
-
-        calPlan.style.display = "none";
-    } 
-
-} */
 
 function getMaxCal() {
     //calculate max calories base on user input
@@ -61,8 +40,7 @@ function getMaxCalbyMacros() {
 
 function generateTable(maxCal) {
     //Create table using the max calories inputed by the user
-
-    return document.getElementById("mealPlan1").innerHTML = `<p><strong>Max Calories For Lunch & Dinner:  ${maxCal}</strong></p><br><table class="table plan">
+    document.getElementById("mealPlan1").innerHTML = `<p><strong>Max Calories For Lunch & Dinner:  ${maxCal}</strong></p><br><table class="table plan">
     <thead class="table-dark">
         <tr>
             <th></th>
@@ -79,21 +57,21 @@ function generateTable(maxCal) {
     <tbody class="table-info">
         <tr>
             <th scope="row">Lunch</th>
-            <td><a onClick="getId()" href="#" id="0" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[0].name}</a></td>
-            <td><a onClick="getId()" href="#" id="1" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[1].name}</a></td>
-            <td><a onClick="getId()" href="#" id="2" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[2].name}</a></td>
-            <td><a onClick="getId()" href="#" id="3" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[3].name}</a></td>
-            <td><a onClick="getId()" href="#" id="4" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[4].name}</a></td>
+            <td><a href="#" onclick="buildModal(0)" id="zero" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[0].name}</a></td>
+            <td><a href="#" onclick="buildModal(1)" id="one" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[1].name}</a></td>
+            <td><a href="#" onclick="buildModal(2)" id="two" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[2].name}</a></td>
+            <td><a href="#" onclick="buildModal(3)" id="three" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[3].name}</a></td>
+            <td><a href="#" onclick="buildModal(4)" id="four" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[4].name}</a></td>
             <!--         <td>meal11</td>
                 <td>meal13</td> -->
         </tr>
         <tr>
             <th scope="row">Dinner</th>
-            <td><a onClick="getId()" href="#" id="5" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[5].name}</a></td>
-            <td><a onClick="getId()" href="#" id="6" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[6].name}</a></td>
-            <td><a onClick="getId()" href="#" id="7" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[7].name}</a></td>
-            <td><a onClick="getId()" href="#" id="8" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[8].name}</a></td>
-            <td><a onClick="getId()" href="#" id="9" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[9].name}</a></td>
+            <td><a href="#" onclick="buildModal(5)" id="five" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[5].name}</a></td>
+            <td><a href="#" onclick="buildModal(6)" id="six" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[6].name}</a></td>
+            <td><a href="#" onclick="buildModal(7)" id="seven" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[7].name}</a></td>
+            <td><a href="#" onclick="buildModal(8)" id="eight" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[8].name}</a></td>
+            <td><a href="#" onclick="buildModal(9)" id="nine" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[9].name}</a></td>
             <!--   <td>meal12</td>
                 <td>meal14</td> -->
         </tr>
@@ -104,6 +82,37 @@ function generateTable(maxCal) {
 
 </table>
 </div>`; 
+    //console.log("table built");
+    return true;
+    
+}
+
+function buildModal(index) {
+    //build Modal populate content based on a given index
+    plan = weeklyPlan;
+    
+    let i = index;
+    
+    //console.log("modal generated");
+
+    return document.getElementById("mealModalBody").innerHTML = `<div class="modal fade" id="mealModal" tabindex="-1" role="dialog" aria-labelledby="calorieModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">${plan[i].name}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">  
+                <img class="card-img-top item" src="img/BBQ_Thin_2.png" alt="Card image cap">
+                <div class="modal-content">
+                    <p>Cal:${plan[i].calories} Protein: ${plan[i].protein} Carbs: ${plan[i].carbs} Fats: ${plan[i].fat}</p>
+                </div> 
+            </div>
+        </div>
+    </div>`; 
 }
     
 function planByCalories() {
@@ -114,9 +123,6 @@ function planByCalories() {
 
     //generate table using weeklyPlan
     generateTable(getMaxCal());
-
-    //build modal based on weeklyPlan
-    buildModal(weeklyPlan);
 
     return false; 
 
@@ -131,53 +137,49 @@ function planByMacros() {
     //generate table using max Calories from Macros
     generateTable(getMaxCalbyMacros());
 
-    
-
     return false;
 
 }
 
-function buildModal(weeklyPlan) {
-    weeklyPlan = weeklyPlan;
+function getId(index) {
+    //return index value
+    index = index;
+    if (index === 0) {
+        return 0;
+    } else if (index === 1) {
+        return 1;
     
-    i = 0;
+    } else if (index === 2) {
+        return 2;
     
+    } else if (index === 3) {
+        return 3;
     
-    return document.getElementById("mealModalBody").innerHTML = `<div class="modal fade" id="mealModal" tabindex="-1" role="dialog" aria-labelledby="calorieModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">${weeklyPlan[i].name}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">  
-                <img class="card-img-top item" src="img/BBQ_Thin_2.png" alt="Card image cap">
-                <div class="modal-content">
-                    <p>Cal:${weeklyPlan[0].calories} Protein: ${weeklyPlan[0].protein} Carbs: ${weeklyPlan[0].carbs} Fats: ${weeklyPlan[0].fat}</p>
-                </div> 
-            </div>
-        </div>
-    </div>` ;
-}
+    } else if (index === 4) {
+        return 4;
 
+    } else if (index === 5) {
+        return 5;
+    
+    } else if (index === 6) {
+        return 6;
+    
+    } else if (index === 7) {
+        return 7;
+    
+    } else if (index === 8) {
+        return 8;
 
-//<a href="#" id="pager_1" class="pagerlink" >link</a>
-
-function getId() {
-
-    id = this.event.target.id;
-
-    if(id == '0'){
-        id = 0;
+    } else if (index === 9) {
+        return 9;
+    
     } else {
-        id = "HELP!";
+        return 0;
     }
-    console.log(id);
-    console.log(typeof(id));
-    return id;
-   
+
 }
-   
+
+// popovers initialization - on hover
+$('.itemOne').hover(function() {
+    $('.item1').toggle();
+});
