@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>fitlife foods - Menu</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- The Page Header -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Meal Planner</a>
+        <div class="align-items-center">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Plan by Calories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Plan by Macros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Card Columns-->
+    <div class="container">
+        <div class="card-columns mt-3">
+            <!--Menu cards-->
+            <div class="menu-items" id="menuDiv">
+
+
+
+
+                <div class="card p-3">
+                    <blockquote class="blockquote mb-0 card-body">
+                      <p>"Let food be thy medicine and medicine be thy food"</p>
+                      <footer class="blockquote-footer">
+                        <small class="text-muted">
+                            <cite title="Source Title">Hippocrates</cite>
+                        </small>
+                      </footer>
+                    </blockquote>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="img/Spinach___Artichoke_Portobello_Circle.png" class="card-img" alt="image card">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <p class="card-text">“The only thing I like better than talking about food is eating”</p>
+                          <p class="card-text"><small class="text-muted"><cite title="Source Title">John Walters</cite></small></p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="card p-3 order-12">
+                    <blockquote class="blockquote mb-0 card-body">
+                        <p>“Life is a combination of magic and pasta”</p>
+                        <footer class="blockquote-footer">
+                          <small class="text-muted">
+                              <cite title="Source Title">Federico Fellini</cite>
+                          </small>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <!-- <script src="js/index.js"></script> -->
+    <script src="js/index.js"></script>
+    <script src="js/meals.js"></script>
+    <script> 
+        document.getElementById("menuDiv").addEventListener("load", buildCards());
+        $(document).ready(function(){
+             $('[data-toggle="popover"]').popover({
+                placement : 'top',
+                trigger : 'hover'
+            });
+        });
+    </script>
+
+</body>
+
+</html>

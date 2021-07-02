@@ -88,7 +88,7 @@ function generateTable(maxCal) {
 }
 
 function buildModal(index) {
-    //build Modal populate content based on a given index
+    //build Modal populate content based on a given index - modal template
     plan = weeklyPlan;
     
     let i = index;
@@ -113,6 +113,33 @@ function buildModal(index) {
             </div>
         </div>
     </div>`; 
+}
+ 
+function buildCards() {
+    //build Menu Cards
+    let content;
+
+    for (i= 0; i < meals.length; i++) {
+        
+        (content = document.createElement('div')).innerHTML= `<div class="card"><img src="img/${meals[i].src}" class="card-img-top" alt="menu card"><div class="card-img-overlay">
+        <h5 class="card-title text-center">${meals[i].name}</h5></div></div>`;
+        document.getElementById('menuDiv').appendChild(content);
+    }
+
+    /*   for (var i = 0; i <= adees.length(); i++) {
+        x = document.createElement('div').innerHTML = "<label class='bo bp'><input type='checkbox' name='adees[" + adees[i] + "]' value=" + adees[i] + ">Test " + adees[i] + "</label></div>";
+        document.body.appendChild(x);
+    };  */
+    console.log("image created");
+    
+    
+}
+
+function imageCardContent(index) {
+    i = index;
+    return `<div class="card">
+    <img src="img/${meals[i].src}" class="card-img-top" alt="...">
+    </div>`;
 }
     
 function planByCalories() {
