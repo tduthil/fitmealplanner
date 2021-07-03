@@ -41,129 +41,135 @@
             </div>
         </div>
     </nav>
-    
-    
+
+
     <!-- Meal Plan Options -->
     <div class="container">
         <div class="row justify-content-center align-items-center mt-4">
             <div class="col-12 text-center mb-2">
                 <h1>Plan Your Weekly Meals</h1>
-                <p>Choose to create a meal plan by entering your calories or enter your macros and we will calculate the calories for you.</p>
+                <p>Choose to create a meal plan by entering your calories or enter your macros and we will calculate the
+                    calories for you.</p>
             </div>
             <div class="col">
                 <!-- <a class="btn btn-primary btn-lg btn-block" href="planbycal.html" role="button">Plan by Calories</a> -->
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#calorieModal">
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                    data-target="#calorieModal">
                     Plan by Calories
                 </button>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#macroModal">
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                    data-target="#macroModal">
                     Plan by Macros
                 </button>
-            </div>    
+            </div>
         </div>
-        
+    
+
         <br>
 
         <p id="meals"></p>
-    
+
         <div id="plan">
 
-        <!--Meal Plan Table Goes Here -->
-        <div class="table-responsive table-bordered table-hover">
+            <!--Meal Plan Table Goes Here -->
+            <div>
+
+                <div class="mealPlan" id="mealPlan1">
+
+                </div>
+
+            </div>
+        </div>
             
-            <div class="mealPlan" id="mealPlan1">
-                
-            </div>
-           
-        </div>
-
-
-    </div>
-
-    <!--Calorie Modal-->
-    <div class="modal fade" id="calorieModal" tabindex="-1" role="dialog" aria-labelledby="calorieModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Enter Total Calories</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="totalCalories">Enter total calories for the day:</label>
-                            <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories"
-                                placeholder="ex. 2000" required>
-                            <small id="planDescription" class="form-text text-muted">60% of your total will be used for Lunch &
-                                Dinner.</small>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <!-- <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()">Submit</button> -->
-                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="return planByCalories()">Submit</button>
+        <!--Calorie Modal-->
+        <div class="modal fade" id="calorieModal" tabindex="-1" role="dialog" aria-labelledby="calorieModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Enter Total Calories</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="totalCalories">Enter total calories for the day:</label>
+                                <input type="text" class="form-control" id="totalCalories" aria-describedby="totalCalories"
+                                    placeholder="ex. 2000" required>
+                                <small id="planDescription" class="form-text text-muted">60% of your total will be used for Lunch &
+                                    Dinner.</small>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()">Submit</button> -->
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="return planByCalories()">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!--Macro Modal-->
-    <div class="modal fade" id="macroModal" tabindex="-1" role="dialog" aria-labelledby="macroModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Enter Macros</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="protein">Enter protein for the day:</label>
-                            <input type="text" class="form-control" id="protein" aria-describedby="protein" placeholder="ex. 200"
-                                required>
-                            <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
-                                Dinner.</small>
-                            <label for="carbs">Enter carbs for the day:</label>
-                            <input type="text" class="form-control" id="carbs" aria-describedby="carbs" placeholder="ex. 150"
-                                required>
-                            <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
-                                Dinner.</small>
-                            <label for="fats">Enter fats for the day:</label>
-                            <input type="text" class="form-control" id="fats" aria-describedby="fats" placeholder="ex. 50"
-                                required>
-                            <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
-                                Dinner.</small>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <!-- <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()">Submit</button> -->
-                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="return planByMacros()">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
     
-    <!-- Button trigger modal -->
-    <!-- <a class="nav-link" data-toggle="modal" data-target="#mealModal">Display Meal</a> -->
 
-    <!--Meal Modal-->
-    <div class="more-modal-stuff" id="mealModalBody">
+        <!--Macro Modal-->
+        <div class="modal fade" id="macroModal" tabindex="-1" role="dialog" aria-labelledby="macroModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Enter Macros</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="protein">Enter protein for the day:</label>
+                                <input type="text" class="form-control" id="protein" aria-describedby="protein" placeholder="ex. 200"
+                                    required>
+                                <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
+                                    Dinner.</small>
+                                <label for="carbs">Enter carbs for the day:</label>
+                                <input type="text" class="form-control" id="carbs" aria-describedby="carbs" placeholder="ex. 150"
+                                    required>
+                                <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
+                                    Dinner.</small>
+                                <label for="fats">Enter fats for the day:</label>
+                                <input type="text" class="form-control" id="fats" aria-describedby="fats" placeholder="ex. 50"
+                                    required>
+                                <small id="planDescription" class="form-text text-muted">60% of your macros will be used for Lunch &
+                                    Dinner.</small>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="submit" class="btn btn-primary" onclick="return calcTotalCalories()">Submit</button> -->
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="return planByMacros()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Button trigger modal -->
+         <!-- <a class="nav-link" data-toggle="modal" data-target="#mealModal">Display Meal</a> -->
+
+        <!--Meal Modal-->
+        <div class="more-modal-stuff" id="mealModalBody">
         
         
+        </div>
+
     </div>
-    
- 
+
+
+
+
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -178,10 +184,10 @@
 
     <!-- Custom JS -->
     <!-- <script src="js/index.js"></script> -->
-    
+
     <script src="js/meals.js"></script>
     <script src="js/index.js"></script>
-    
+
 
 </body>
 

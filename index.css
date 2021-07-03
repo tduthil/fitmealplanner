@@ -2,15 +2,17 @@ body, html {
    
   
    /* The image used */
-   background-image: url("img/pexels-lukas-349609.jpg");
+   background-image: url("img/pexels-any-lane-5946083.jpg");
  
+   /*background backup color*/
+   background-color: #E7E1AF;
    /* Full height */
-   height: 100%;
+   height: 100%; 
  
    /* Center and scale the image nicely */
-   background-position: center;
-   background-repeat: repeat-y;
-   background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #mealPlan1{
@@ -43,4 +45,17 @@ img {
 
 .card-title {
    color:#0E425D;
+}
+
+.special{
+   background-color: white;
+}
+
+.card {
+   border-radius: 20%;
+}
+
+.card:hover{
+   transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }

@@ -40,7 +40,7 @@ function getMaxCalbyMacros() {
 
 function generateTable(maxCal) {
     //Create table using the max calories inputed by the user
-    document.getElementById("mealPlan1").innerHTML = `<p><strong>Max Calories For Lunch & Dinner:  ${maxCal}</strong></p><br><table class="table plan">
+    document.getElementById("mealPlan1").innerHTML = `<p><strong>Max Calories For Lunch & Dinner:  ${maxCal}</strong></p><br><div class="table-responsive"><table class="table table-hover plan">
     <thead class="table-dark">
         <tr>
             <th></th>
@@ -54,7 +54,7 @@ function generateTable(maxCal) {
 -->
         </tr>
     </thead>
-    <tbody class="table-info">
+    <tbody class="table-light">
         <tr>
             <th scope="row">Lunch</th>
             <td><a href="#" onclick="buildModal(0)" id="zero" class="popup" data-toggle="modal" data-target="#mealModal">${weeklyPlan[0].name}</a></td>
@@ -81,7 +81,7 @@ function generateTable(maxCal) {
 
 
 </table>
-</div>`; 
+</div></div>`; 
     //console.log("table built");
     return true;
     
@@ -121,16 +121,13 @@ function buildCards() {
 
     for (i= 0; i < meals.length; i++) {
         
-        (content = document.createElement('div')).innerHTML= `<div class="card"><img src="img/${meals[i].src}" class="card-img-top" alt="menu card"><div class="card-img-overlay">
-        <h5 class="card-title text-center">${meals[i].name}</h5></div></div>`;
+        (content = document.createElement('div')).innerHTML= `<div class="card">
+        <img src="img/${meals[i].src}" class="card-img-top" alt="menu card">
+        </div>`;
         document.getElementById('menuDiv').appendChild(content);
     }
 
-    /*   for (var i = 0; i <= adees.length(); i++) {
-        x = document.createElement('div').innerHTML = "<label class='bo bp'><input type='checkbox' name='adees[" + adees[i] + "]' value=" + adees[i] + ">Test " + adees[i] + "</label></div>";
-        document.body.appendChild(x);
-    };  */
-    console.log("image created");
+    //console.log("image created");
     
     
 }
